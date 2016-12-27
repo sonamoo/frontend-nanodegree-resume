@@ -15,14 +15,15 @@ var bio = {
 	"skills" : skills
 };
 
-var work = {
-	
+var work = {};
+work.position = "Sales Representative"
+work.employer = "Groupon Korea"
+work.years = 1;
 
-};
-
-var education = {
-
-};
+var education = {};
+education["name"] = "University of Illinois in Chicago"
+education["years"] = "2017-2018"
+education["city"] = "Chicago"
 
 HTMLheaderName = HTMLheaderName.replace("%data%",bio.name);
 HTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -35,6 +36,33 @@ HTMLlinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
 HTMLbioPic = HTMLbioPic.replace("%data%", bio.profile);
 HTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcome);
 
+HTMLworkStart
+HTMLworkEmployer
+HTMLworkTitle
+HTMLworkDates
+HTMLworkLocation
+HTMLworkDescription
+
+HTMLprojectStart = '<div class="project-entry"></div>';
+HTMLprojectTitle = '<a href="#">%data%</a>';
+HTMLprojectDates = '<div class="date-text">%data%</div>';
+HTMLprojectDescription = '<p><br>%data%</p>';
+HTMLprojectImage = '<img src="%data%">';
+
+HTMLschoolStart = '<div class="education-entry"></div>';
+HTMLschoolName = '<a href="#">%data%';
+HTMLschoolDegree = ' -- %data%</a>';
+HTMLschoolDates = '<div class="date-text">%data%</div>';
+HTMLschoolLocation = '<div class="location-text">%data%</div>';
+HTMLschoolMajor = '<em><br>Major: %data%</em>';
+
+HTMLonlineClasses = '<h3>Online Classes</h3>';
+HTMLonlineTitle = '<a href="#">%data%';
+HTMLonlineSchool = ' - %data%</a>';
+HTMLonlineDates = '<div class="date-text">%data%</div>';
+HTMLonlineURL = '<br><a href="#">%data%</a>';
+internationalizeButton = '<button>Internationalize</button>';
+googleMap = '<div id="map"></div>';
 
 $("#header").prepend(HTMLheaderRole);
 $("#header").prepend(HTMLheaderName);
@@ -46,3 +74,6 @@ $("#header").append(HTMLlinkedIn);
 
 $("#header").append(HTMLbioPic);
 $("#header").append(HTMLwelcomeMsg);
+
+$("#workExperience").append()
+$("#education").append()
