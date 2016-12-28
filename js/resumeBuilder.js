@@ -13,18 +13,29 @@ var bio = {
 	"skills" : ["Python","JavaScript","SQL","C++","AngularJS","PostgreSQL","MongoDB"]
 };
 
+
+
+HTMLheaderName = HTMLheaderName.replace("%data%", bio.name);
+HTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
+
+HTMLbioPic = HTMLbioPic.replace("%data%", bio.profile);
+HTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcome);
+
+$("#header").prepend(HTMLheaderRole);
+$("#header").prepend(HTMLheaderName);
+
+$("#header").append(HTMLbioPic);
+$("#header").append(HTMLwelcomeMsg);
+
 if (bio.skills.length > 0){
 	$("#header").append(HTMLskillsStart);
 	for (var i = 0; i < bio.skills.length; i++){
-		var formattedSkill = HTMLskillsStart.replace("%data%", bio.skills[i]);
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 		$("#skills").append(formattedSkill);
+		console.log(bio.skills[i]);
 	}
 };
 
-HTMLheaderName = HTMLheaderName
-HTMLheaderRole = HTMLheaderRole
-$("#header").prepend(HTMLheaderName);
-$("#header").prepend(HTMLheaderRole);
 
 var work = {
 	"jobs": [
