@@ -70,6 +70,12 @@ h5 {
   float: left;
 }
 
+.position-text {
+  font-size: 14px;
+  line-height: 16px;
+  
+}
+
 .location-text {
   font-style: italic;
   font-size: 14px;

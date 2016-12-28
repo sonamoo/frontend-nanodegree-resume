@@ -13,8 +13,6 @@ var bio = {
 	"skills" : ["Python","JavaScript","SQL","C++","AngularJS","PostgreSQL","MongoDB"]
 };
 
-
-
 HTMLheaderName = HTMLheaderName.replace("%data%", bio.name);
 HTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
 
@@ -30,6 +28,7 @@ $("#header").append(HTMLwelcomeMsg);
 if (bio.skills.length > 0){
 	$("#header").append(HTMLskillsStart);
 	for (var i = 0; i < bio.skills.length; i++){
+
 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 		$("#skills").append(formattedSkill);
 		console.log(bio.skills[i]);
@@ -43,16 +42,39 @@ var work = {
 			"employer": "Romp International",
 			"title": "Oversea Sales Representative",
 			"dates": "November 2014 - June 2015",
+			"location" : "Seoul, South Korea",
 			"description":"Negotiated with retailers, distributors based on China and Russia to sell ROMP gear."
 		},
 		{
 			"employer": "Groupon Korea",
 			"title": "Sales Representative",
 			"dates": "June 2013 - April 2014",
+			"location": "Seoul, South Korea",
 			"description": "Negotiated with 175 hotels in Seoul to provide highly discounted accommodation Groupon Deals."
 		}
 	]
 };
+
+for (job in work.jobs){
+	$("#workExperience").append(HTMLworkStart)
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates );
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	
+	$("#workExperience").append(formattedEmployer);
+	$("#workExperience").append(formattedTitle);
+	$("#workExperience").append(formattedDates);
+	$("#workExperience").append(formattedLocation);
+	$("#workExperience").append(formattedDescription);
+};
+
+HTMLworkEmployer
+HTMLworkTitle
+HTMLworkDates
+HTMLworkLocation
+HTMLworkDescription
 
 var education = {
 	"schools": [
