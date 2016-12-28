@@ -1,5 +1,3 @@
-skills = ["Python","JavaScript","SQL","C++","AngularJS","MongoDB"];
-
 var bio = {
 	"name" : "Seho Lim",
 	"role" : "Software Engineer",
@@ -10,70 +8,94 @@ var bio = {
 		"linkedIn" : "linkedin.com/in/seholim",
 		"location"  : "Chicago"
 	},
-	"welcome" : "Hi guys!",
+	"welcome" : "Full Stack Web Developer",
 	"profile" : "images/profile.jpg",
-	"skills" : skills
+	"skills" : ["Python","JavaScript","SQL","C++","AngularJS","PostgreSQL","MongoDB"]
 };
 
-var work = {};
-work.position = "Sales Representative"
-work.employer = "Groupon Korea"
-work.years = 1;
+if (bio.skills.length > 0){
+	$("#header").append(HTMLskillsStart);
+	for (var i = 0; i < bio.skills.length; i++){
+		var formattedSkill = HTMLskillsStart.replace("%data%", bio.skills[i]);
+		$("#skills").append(formattedSkill);
+	}
+};
 
-var education = {};
-education["name"] = "University of Illinois in Chicago"
-education["years"] = "2017-2018"
-education["city"] = "Chicago"
-
-HTMLheaderName = HTMLheaderName.replace("%data%",bio.name);
-HTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
-
-HTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-HTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
-HTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-HTMLlinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
-
-HTMLbioPic = HTMLbioPic.replace("%data%", bio.profile);
-HTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcome);
-
-HTMLworkStart
-HTMLworkEmployer
-HTMLworkTitle
-HTMLworkDates
-HTMLworkLocation
-HTMLworkDescription
-
-HTMLprojectStart = '<div class="project-entry"></div>';
-HTMLprojectTitle = '<a href="#">%data%</a>';
-HTMLprojectDates = '<div class="date-text">%data%</div>';
-HTMLprojectDescription = '<p><br>%data%</p>';
-HTMLprojectImage = '<img src="%data%">';
-
-HTMLschoolStart = '<div class="education-entry"></div>';
-HTMLschoolName = '<a href="#">%data%';
-HTMLschoolDegree = ' -- %data%</a>';
-HTMLschoolDates = '<div class="date-text">%data%</div>';
-HTMLschoolLocation = '<div class="location-text">%data%</div>';
-HTMLschoolMajor = '<em><br>Major: %data%</em>';
-
-HTMLonlineClasses = '<h3>Online Classes</h3>';
-HTMLonlineTitle = '<a href="#">%data%';
-HTMLonlineSchool = ' - %data%</a>';
-HTMLonlineDates = '<div class="date-text">%data%</div>';
-HTMLonlineURL = '<br><a href="#">%data%</a>';
-internationalizeButton = '<button>Internationalize</button>';
-googleMap = '<div id="map"></div>';
-
-$("#header").prepend(HTMLheaderRole);
+HTMLheaderName = HTMLheaderName
+HTMLheaderRole = HTMLheaderRole
 $("#header").prepend(HTMLheaderName);
+$("#header").prepend(HTMLheaderRole);
 
-$("#header").append(HTMLmobile);
-$("#header").append(HTMLemail);
-$("#header").append(HTMLgithub);
-$("#header").append(HTMLlinkedIn);
+var work = {
+	"jobs": [
+		{
+			"employer": "Romp International",
+			"title": "Oversea Sales Representative",
+			"dates": "November 2014 - June 2015",
+			"description":"Negotiated with retailers, distributors based on China and Russia to sell ROMP gear."
+		},
+		{
+			"employer": "Groupon Korea",
+			"title": "Sales Representative",
+			"dates": "June 2013 - April 2014",
+			"description": "Negotiated with 175 hotels in Seoul to provide highly discounted accommodation Groupon Deals."
+		}
+	]
+};
 
-$("#header").append(HTMLbioPic);
-$("#header").append(HTMLwelcomeMsg);
+var education = {
+	"schools": [
+		{	
+			"name":"University of Illinois in Chicago",
+			"city": "Chicago, IL",
+			"degree": "Bachelor",
+			"majors": ["Computer Science"],
+			"dates" : "January 2017 - December 2018",
+			"url": "http://www.uic.edu"
+		},
+		{
+			"name":"Oakton Community College",
+			"city": "Desplaines, IL",
+			"majors": ["Computer Science"],
+			"dates" : "August 2015 - December 2016",
+			"url": "http://www.oakton.edu/"	
+		}
+	],
+	"MOOC": [
+		{
+			"title" : "Algorithm",
+			"school" : "Princeton University",
+			"dates" : "January 2017 - March 2017",
+			"url" : "https://www.coursera.org/learn/algorithms-part1"
+		},
+		{
+			"title" : "Full Stack Web Development Nano Degree",
+			"school" : "Udacity",
+			"dates" : "September 2016 - January 2017",
+			"url" : "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
+		},
+		{
+			"title" : "Full Stack Web Development Course",
+			"school" : "The Hong Kong University of Science and Technology",
+			"dates" : "November 2015 - September 2016",
+			"url" : "https://www.coursera.org/specializations/full-stack"
+		}
+	]
+};
 
-$("#workExperience").append()
-$("#education").append()
+var projects = {
+	"projects": [
+		{
+			"title": "Multi-User-Blog",
+			"dates": "Winter 2016",
+			"description" : "Created simple multi-user blog using Google App Engine and Python. Users can read, upload, comment, and like the blog posts",
+			"link": "practicebasicblog.appspot.com/blog",
+		},
+		{
+			"title" : "Restaurant Website/Mobile App",
+			"dates" : "Spring 2016",
+			"description" : "Created Single-Page web Applications with on a MEAN stack. Created mobile apps with Ionic and Cordova.",
+			"link":""
+		}
+	]
+}
