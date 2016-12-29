@@ -10,7 +10,7 @@ var bio = {
 	},
 	"welcome" : "Full Stack Web Developer",
 	"profile" : "images/profile.jpg",
-	"skills" : ["Python","JavaScript","SQL","C++","AngularJS","PostgreSQL","MongoDB"]
+	"skills" : ["Python","JavaScript","Java","C++","AngularJS","PostgreSQL","MongoDB"]
 };
 
 var work = {
@@ -20,14 +20,20 @@ var work = {
 			"title": "Oversea Sales Representative",
 			"dates": "November 2014 - June 2015",
 			"location" : "Seoul, South Korea",
-			"description":"Negotiated with retailers, distributors based on China and Russia to sell ROMP gear."
+			"description":
+				["Negotiated with retailers, distributors based on China and Russia to sell ROMP gear.",
+				 "Sponsored and communicated with more than 30 Russian, Canadian, and American professional snowboarders",
+				 "Planned, prepared, and participated in ISPO Munich, an international sporting  goods sporting show, as an exhibitor"]
 		},
 		{
 			"employer": "Groupon Korea",
 			"title": "Sales Representative",
 			"dates": "June 2013 - April 2014",
 			"location": "Seoul, South Korea",
-			"description": "Negotiated with 175 hotels in Seoul to provide highly discounted accommodation Groupon Deals."
+			"description": 
+				["Negotiated with 175 hotels in Seoul to provide highly discounted accommodation Groupon Deals.",
+				 "Provided roughly 20 Groupon Deals per month on the Groupon website",
+				 "Negotiated with local restaurants, cafes, gyms, and food and beverage companies' headquarters to provide highly discounted Groupon Deals."]
 		}
 	]
 };
@@ -36,7 +42,7 @@ var education = {
 	"schools": [
 		{	
 			"name":"University of Illinois in Chicago",
-			"city": "Chicago, IL",
+			"location": "Chicago, IL",
 			"degree": "Bachelor",
 			"majors": ["Computer Science"],
 			"dates" : "January 2017 - December 2018",
@@ -44,7 +50,7 @@ var education = {
 		},
 		{
 			"name":"Oakton Community College",
-			"city": "Desplaines, IL",
+			"location": "Desplaines, IL",
 			"majors": ["Computer Science"],
 			"dates" : "August 2015 - December 2016",
 			"url": "http://www.oakton.edu/"	
@@ -71,7 +77,6 @@ var education = {
 		}
 	]
 };
-
 
 var projects = {
 	"projects": [
@@ -116,7 +121,6 @@ projects.display = function(){
 };
 
 projects.display();
-
 
 HTMLheaderName = HTMLheaderName.replace("%data%", bio.name);
 HTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -176,23 +180,29 @@ function displayWork(){
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates );
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedLocation);
-		$(".work-entry:last").append(formattedDescription);
+		$(".work-entry:last").append(HTMLworkDescriptionStart);
+
+		for(var j = 0; j < work.jobs[i].description.length; j++){
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description[j]);
+			console.log(work.jobs[i].description[j]);
+			console.log(formattedDescription);
+			$(".workDescription:last").append(formattedDescription);		
+		}
+		
 	}
 };
 
 displayWork();
 
+$("#mapDiv").append(googleMap);
+
 $(document).click(function(loc) {
   var x = loc.pageX;
   var y = loc.pageY;
-
   logClicks(x,y);
- 
 });
 
 

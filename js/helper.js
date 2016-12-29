@@ -35,7 +35,8 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescriptionStart = '<div class="workDescription></div>';
+var HTMLworkDescription = '<p>%data%</p>';
 
 /********************** Project ******************************/
 var HTMLprojectStart = '<div class="project-entry"></div>';
@@ -60,7 +61,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<div id="map">sdfsdfadfs</div>';
 
 
 /*
@@ -151,6 +152,7 @@ function initializeMap() {
 
     return locations;
   }
+  console.log(locationFinder())
 
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
@@ -207,6 +209,7 @@ function initializeMap() {
   pinPoster(locations) takes in the array of locations created by locationFinder()
   and fires off Google place searches for each location
   */
+  console.log(map);
   function pinPoster(locations) {
 
     // creates a Google place search service object. PlacesService does the work of
@@ -243,11 +246,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+  map.fitBounds(mapBounds);
+});
