@@ -35,8 +35,8 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescriptionStart = '<div class="workDescription></div>';
-var HTMLworkDescription = '<p>%data%</p>';
+var HTMLworkDescriptionStart = '<div class="workDescription"><br></div>';
+var HTMLworkDescription = '<p>-&nbsp&nbsp&nbsp&nbsp&nbsp%data%</p>';
 
 /********************** Project ******************************/
 var HTMLprojectStart = '<div class="project-entry"></div>';

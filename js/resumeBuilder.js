@@ -183,15 +183,15 @@ function displayWork(){
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedLocation);
+
 		$(".work-entry:last").append(HTMLworkDescriptionStart);
+
 
 		for(var j = 0; j < work.jobs[i].description.length; j++){
 			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description[j]);
-			console.log(work.jobs[i].description[j]);
-			console.log(formattedDescription);
+			
 			$(".workDescription:last").append(formattedDescription);		
 		}
-		
 	}
 };
 
